@@ -2,7 +2,7 @@
     --dark: #66635b;
     --mid: #a59e8c;
     --light: #d7ceb2;
-    --dark-accent: #4c5760;
+    --dark-accent: #363e45;
     --light-accent: #93a8ac;
 }
 
@@ -51,23 +51,33 @@ nav {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(to right, rgba(76, 87, 96, 0), rgba(76, 87, 96, 1));
-    border: white solid 1px;
     text-align: end;
 }
 
 nav ul {
     list-style-type: none;
-    display: inline;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
-    display: inline;
-    padding: 8px 8px;
+    float: right;
+    padding: 10px;
 }
 
-nav a {
+nav li a {
+    display: block;
     text-decoration: none;
+    font-size: large;
+    font-weight: bold;
     color: var(--light-accent);
+    text-align: center;
+    padding: 10px 15px;
+}
+
+nav li a:hover:not(.active) {
+    background-color: var(--light-accent);
+    color: var(--dark-accent);
 }
 
 #logo {
@@ -123,6 +133,8 @@ h5 {
     }
     
     nav {
+        display: flex;
+        flex-direction: column;
         grid-column: 1 / 4;
         grid-row: 4 / 5;
         background-color: var(--dark-accent);
@@ -139,8 +151,12 @@ h5 {
         width: 100%;
     }
     
+    nav li {
+        float: none;
+    }
+    
     nav li a {
-        display: block;
+        float: none;
         padding: 4px;
         text-align: center;
     }
@@ -152,7 +168,6 @@ h5 {
     #site-logo {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
-        /* background-color: var(--mid); */
         justify-self: center;
         align-self: center;
         border-radius: 165px;
