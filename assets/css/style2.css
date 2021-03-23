@@ -2,8 +2,8 @@
     --dark: #66635b;
     --mid: #a59e8c;
     --light: #d7ceb2;
-    --dark-accent: #363e45;
-    --light-accent: #93a8ac;
+    --dark-accent: #93a8ac;
+    --light-accent: #363e45;
 }
 
 * {
@@ -13,7 +13,7 @@
 body {
     display: grid;
     grid-template-rows: 160px auto 60px;
-    background-color: var(--dark);
+    background-color: var(--light-accent);
     font-family: 'Times New Roman', Times, serif;
     height: 100%;
 }
@@ -208,6 +208,7 @@ h5 {
 }
 
 p {
+    color: var(--dark-accent);
     line-height: 1.5em;
 }
 
