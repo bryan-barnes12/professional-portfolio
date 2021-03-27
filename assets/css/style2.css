@@ -2,8 +2,8 @@
     --dark: #66635b;
     --mid: #a59e8c;
     --light: #d7ceb2;
-    --dark-accent: #93a8ac;
-    --light-accent: #363e45;
+    --dark-accent: #363e45;
+    --light-accent: #93a8ac;
 }
 
 * {
@@ -85,40 +85,55 @@ height: 130px;
 width: 130px;
 }
 
+/* Styling for the main content area of the site. */
 main {
     display: grid;
     grid-row: 2 / 3;
     grid-template-columns: 10% auto 10%;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     margin-top: 10px;
     padding: 10px;
 }
 
-#bio {
+main section {
     grid-column: 2 / 3;
-    grid-row-end: 1 / 2;
     background-color: var(--light-accent);
-    padding: 10px 15px;
     margin-top: 10px;
-    text-align: right;
+    padding: 10px 15px;
     border-radius: 20px;
     box-shadow: 2em 2em 4em var(--dark-accent);
+    text-align: right;
+    align-items: flex-end;
+}
+
+.proj-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+#bio {
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: row;
+}
+
+#bio-photo {
+    width: 30%;
     border-radius: 20px;
+    float: left;
+    padding: 10px;
 }
 
 #projects {
+    grid-row: 2 / 3;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    grid-column: 2 / 3;
-    grid-row-end: 2 / 3;
     flex-direction: row;
-    background-color: var(--light-accent);
-    padding: 15px 15px;
-    margin-top: 10px;
-    text-align: right;
-    border-radius: 20px;
-    box-shadow: 2em 2em 4em var(--dark-accent);
+}
+
+#contact {
+    grid-row: 3 / 4;
 }
 
 #proj-head {
@@ -130,8 +145,8 @@ main {
     grid-template-columns: 3fr 2fr;
     align-items: center;
     padding: 20px;
-    border: 1px solid var(--dark-accent);
     border-radius: 20px;
+    box-shadow: .25em .25em 2em var(--dark-accent);
 }
 
 #hero:hover {
@@ -154,8 +169,8 @@ main {
     padding: 10px 15px;
     margin: 10px;
     text-align: right;
-    border: 1px solid var(--dark-accent);
     border-radius: 20px;
+    box-shadow: .25em .25em 2em var(--dark-accent);
 }
 
 .proj-block:hover {
@@ -169,6 +184,13 @@ main {
     border-radius: 20px;
     float: left;
     padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
 }
 
 footer {
@@ -271,8 +293,14 @@ p {
         border-radius: 165px;
         background-color: var(--dark-accent);
         box-shadow: 2em 2em 4em var(--dark-accent);
+        animation: fadein 1.5s;
     }
     
+    @keyframes movein {
+        0%   {left: 200%;}
+        100%  {left: 0%;}
+    }        
+
     #site-name {
         grid-column: 1 / 4;
         grid-row: 3 / 4;
@@ -287,50 +315,28 @@ p {
     }
     /* styling for mobile responsive main section */
     main {
-        display: grid;
+        display: flex;
         grid-row: 2 / 3;
-        grid-template-columns: 10% auto 10%;
-        grid-template-rows: 300px auto;
-        /* background-image: linear-gradient(var(--dark-accent), var(--light-accent)); */
+        /* grid-template-columns: 10% auto 10%;
+        grid-template-rows: 300px auto; */
+        flex-direction: column;
         margin-top: 10px;
         padding: 10px;
     }
 
     #bio {
-        grid-column: 2 / 3;
-        grid-row-end: 1 / 2;
-        background-color: var(--light-accent);
-        padding: 10px 15px;
-        margin-top: 10px;
-        text-align: right;
-        border: 1px solid var(--dark-accent);
-        border-radius: 20px;
+        flex-direction: column;
     }
-
-    #projects {
-        display: flex;
-        justify-content: center;
-        grid-column: 2 / 3;
-        grid-row-end: 2 / 3;
-        background-color: var(--light-accent);
-        padding: 10px 15px;
-        margin-top: 10px;
-        text-align: right;
-        border: 1px solid var(--dark-accent);
+    
+        #bio-photo {
+        width: 50%;
         border-radius: 20px;
+        padding: 10px;
     }
-
-    #hero {
+    
+        #hero {
         display: flex;
         flex-direction: column;
-        grid-column: 2 / 3;
-        grid-row-end: 2 / 3;
-        background-color: var(--light-accent);
-        padding: 10px 15px;
-        margin-top: 10px;
-        text-align: right;
-        border: 1px solid var(--dark-accent);
-        border-radius: 20px;
     }
 
     #hero-text {
@@ -349,6 +355,7 @@ p {
     
     .proj-block {
         display: flex;
+        position: relative;
         flex-direction: column;
         grid-column: 2 / 3;
         grid-row-end: 2 / 3;
@@ -356,17 +363,31 @@ p {
         padding: 10px 15px;
         margin-top: 10px;
         text-align: right;
-        border: 1px solid var(--dark-accent);
+        border: none;
         border-radius: 20px;
     }
 
+    @keyframes fadein {
+        0%   {opacity: 0;}
+        100%  {opacity: 1;}
+    }
+
+    @keyframes fadeout {
+        0%   {opacity: 1;}
+        100%  {opacity: 0;}
+    }
+
     .proj-image {
-        height: 100px;
-        width: 100px;
-        float: none;
+        height: 100%;
+        width: 100%;
         border-radius: 20px;
     }
     
+    figcaption {
+        width: 100%;
+        background-color: var(--dark-accent);
+        color: var(--light-accent);
+    }
 
     footer {
         grid-column: 1 / 4;
