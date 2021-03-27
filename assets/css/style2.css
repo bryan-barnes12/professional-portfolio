@@ -194,10 +194,13 @@ form {
 }
 
 footer {
+    display: flex;
     grid-row: 3 / 4;
     background-color: var(--dark-accent);
     color: var(--light-accent);
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Element Attributes */
