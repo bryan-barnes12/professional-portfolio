@@ -6,71 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan Barnes</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/style2.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <header>
-        <figure id="site-logo"><img id="logo" src="./assets/images/brokenstar_logo.png" /></figure>
-        <figure id="site-name"><h1>bryan.barnes</h1></figure>
-        <nav>
-            <ul>
-                <li><a href="#bio">bio</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="bio">
-            <img id="bio-photo" src="./assets/images/bio-photo.jpeg" alt="Man standing by tree." >
-            <figure><a name="bio"><h2>bio</h2></a>
-            <p>The most important part of designing beautiful things is always working from your inspiration. As a craftsman I'm devoted to creating thoughtful, functional designs that are as easy to use as they are to admire.</p></figure>
+    <header class="container">
+        <section class="row">
+            <figure id="site-logo" class="column col-sm-2"><img id="logo" src="./assets/images/brokenstar_logo.png" /></figure>
         </section>
-        <section id="projects">
-            <article id="proj-head">
-                <a name="projects"><h2>projects</h2></a>
-                <p>Below is a small collection of projects I have worked on. Click on a section for more information.</p><br>
-            </article>
-            <a class="proj-link" href="https://bryan-barnes12.github.io/segment-stop-calculator/segment_stop_length.html" target="_blank">
-                <article id="hero">
-                <figure id="hero-image">
-                    <image class="proj-hero" src="./assets/images/tablesaw.png" alt="segmented woodturning" />
-                </figure>
-                <aside id="hero-text">
-                    <h4>Segmented Woodturning Calculator</h4>
-                    <p>This calculator takes the guesswork out of designing beautiful segmented woodturnings. With the built in advanced math functions users only need to know how big and how many. Click to see it in action.</p>
-                </aside>
-            </article>
-            </a>
-            <article class="proj-block">
-                <aside id="proj-text">
-                    <figure id="proj-front"><image class="proj-image" src="./assets/images/accessibility-site.png" alt="segmented woodturning" /></figure>
-                    <figure id="proj-back"><h4>accessibility refactoring</h4><p>If we want to make the web more useful for everyone we have to work at it. In this project I was given the opportunity to clean up the code on an existing page to improve its accessibility.</p></figure>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light row">
+            <div class="container-fluid">
+              <a class="navbar-brand">bryan.barnes</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#bio">bio</a>
+                  <a class="nav-link" href="#projects">projects</a>
+                  <a class="nav-link" href="#contact">contact</a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      web profiles
                     </a>
-            </aside>
-            </article>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="https://www.linkedin.com/in/bryan-barnes-40a455207/" target="_blank">linkedin</a></li>
+                      <li><a class="dropdown-item" href="https://github.com/bryan-barnes12" target="_blank">github</a></li>
+                    </ul>
+                  </li>
+                          </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="container">
+        <!-- BIO SECTION -->
+        <section id="bio" class="row">
+            <figure id="bio-image" class="column col-sm-7">
+                <img id="bio-photo" src="./assets/images/bio-photo.jpeg" alt="Man standing by tree." >
+            </figure>
+            <figure id="bio-info" class="column col-sm-5">
+                <a name="bio"><h2>bio</h2></a>
+                <p>The most important part of designing beautiful things is always working from your inspiration. As a craftsman I'm devoted to creating thoughtful, functional designs that are as easy to use as they are to admire.</p>
+            </figure>
         </section>
-        <section id="contact">
-            <a name="contact"><h2>contact</h2></a>
-            <p>To get in touch, fill out the form below. I'd love to hear from you!</p>
-            <form>
-                <input id="email" name="email" type="email" value="email">
-                <textarea id="message" name="message" rows="4">type your message here.</textarea>
-                <button id="submit" type="submit">send</button>
-            </form>
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="row">
+            <div id="carouselExampleCaptions" class="carousel slide col-sm-7 col-lg-6" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/jeopardy_game.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="jeopardy">JEOPARDY!</button>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/realtime_weather.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="weather">real-time weather</button>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/password_generator.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="password">password generator</button>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+                          <article id="proj-head" class="column col-sm-5">
+              <a name="projects"><h2>projects</h2></a>
+              <p>This is a small collection of projects I have been working on. Click on a section for more information.</p><br>
+          </article>
         </section>
     </main>
-    <footer>
-        <a>Designed by Bryan Barnes - &copy;<span id="year"></span></a>
-    </footer>
-    <script>document.getElementById('year').innerHTML = new Date().getFullYear();</script>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
+      
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="projDesc"></p>
+                <ul>
+                    <li id="projDeploy"></li>
+                    <li id="projRepo"></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
 
