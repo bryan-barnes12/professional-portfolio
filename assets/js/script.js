@@ -26,8 +26,6 @@ const projContent = {
 }
 
 function clearProjModal() {
-    modalLabel.empty();
-    modalDesc.empty();
     modalDUrl.empty();
     modalRUrl.empty();
 }
